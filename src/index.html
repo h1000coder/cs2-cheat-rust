@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREEADOM</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <h2>FREEADOM</h2>
+                <p>CS2 EXTERNAL CHEAT</p>
+            </div>
+            <div class="nav-item active" data-tab="aim">🎯 AIM</div>
+            <div class="nav-item" data-tab="esp">👁️ ESP</div>
+            <div class="nav-item" data-tab="colors">🎨 COLORS</div>
+            <div class="nav-item" data-tab="skinchanger">🔫 SKIN CH</div>
+            <div class="nav-item" data-tab="info">📊 INFO</div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>⚡ FREEADOM CONTROL PANEL</h1>
+                <div class="status-badge" id="game_status">● ONLINE</div>
+            </div>
+
+            <!-- TAB AIM -->
+            <div id="tab-aim" class="tab-content active">
+                <div class="settings-grid">
+                    <div class="card">
+                        <div class="card-title">🎯 AIMBOT</div>
+                        <div class="switch-item">
+                            <div class="switch-label">Mouse Aimbot</div>
+                            <label class="switch"><input type="checkbox" id="aimbot_enabled"><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-label"><span>Aim Smooth</span><span id="aimbot_smooth_val">5.0</span>
+                            </div>
+                            <input type="range" id="aimbot_smooth" min="1.0" max="20.0" step="0.5" value="5.0">
+                        </div>
+
+                        <!-- 🔥 NOVO: Seletor de tecla para Aimbot -->
+                        <div class="keybind-item">
+                            <span class="keybind-label">Aim Key</span>
+                            <button class="keybind-button" id="aimbot_key_btn">Set</button>
+                            <span class="keybind-status" id="aimbot_key_status">None</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🎯 TRIGGER BOT</div>
+                        <div class="switch-item">
+                            <div class="switch-label">Enable Trigger Bot</div>
+                            <label class="switch"><input type="checkbox" id="trigger_bot_enabled"><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="switch-item">
+                            <div class="switch-label">Hold Mode (vs Toggle)</div>
+                            <label class="switch"><input type="checkbox" id="trigger_hold_mode" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-label"><span>Trigger Delay (ms)</span><span
+                                    id="trigger_delay_val">0</span></div>
+                            <input type="range" id="trigger_delay" min="0" max="500" step="10" value="0">
+                        </div>
+                        <div class="keybind-item">
+                            <span class="keybind-label">Trigger Key</span>
+                            <button class="keybind-button" id="trigger_key_btn">Set</button>
+                            <span class="keybind-status" id="trigger_key_status">None</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🎯 FOV</div>
+                        <div class="switch-item">
+                            <div class="switch-label">Enable FOV Circle</div>
+                            <label class="switch"><input type="checkbox" id="fov_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-label"><span>FOV Size</span><span id="fov_size_val">100.0</span></div>
+                            <input type="range" id="fov_size" min="1" max="360" step="5" value="100">
+                        </div>
+                        <div class="color-row">
+                            <span>FOV Color</span>
+                            <input type="color" id="fov_color" value="#ffffff">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB ESP -->
+            <div id="tab-esp" class="tab-content">
+                <div class="settings-grid">
+                    <div class="card">
+                        <div class="card-title">🎯 VISUAL</div>
+                        <div class="switch-item">
+                            <div class="switch-label">ESP Master</div>
+                            <label class="switch"><input type="checkbox" id="esp_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="switch-item">
+                            <div class="switch-label">Box ESP</div>
+                            <label class="switch"><input type="checkbox" id="esp_box_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-label"><span>Box Thickness</span><span id="box_thickness_val">2.0</span>
+                            </div>
+                            <input type="range" id="box_thickness" min="0.5" max="5.0" step="0.1" value="2.0">
+                        </div>
+                        <div class="switch-item">
+                            <div class="switch-label">Filled Box ESP</div>
+                            <label class="switch"><input type="checkbox" id="esp_filled_box_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="switch-item">
+                            <div class="switch-label">Name ESP</div>
+                            <label class="switch"><input type="checkbox" id="esp_name_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="switch-item">
+                            <div class="switch-label">Distance ESP</div>
+                            <label class="switch"><input type="checkbox" id="esp_distance_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">❤️ HEALTH</div>
+                        <div class="switch-item">
+                            <div class="switch-label">Health Bar</div>
+                            <label class="switch"><input type="checkbox" id="esp_health_bar_enabled" checked><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-label"><span>Bar Width</span><span id="health_bar_width_val">6.0</span>
+                            </div>
+                            <input type="range" id="health_bar_width" min="2.0" max="12.0" step="0.5" value="6.0">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🦴 SKELETON</div>
+                        <div class="switch-item">
+                            <div class="switch-label">Skeleton ESP</div>
+                            <label class="switch"><input type="checkbox" id="esp_skeleton_enabled"><span
+                                    class="slider"></span></label>
+                        </div>
+                        <div class="slider-item">
+                            <div class="slider-label"><span>Thickness</span><span id="skeleton_thickness_val">1.5</span>
+                            </div>
+                            <input type="range" id="skeleton_thickness" min="0.5" max="4.0" step="0.1" value="1.5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB COLORS -->
+            <div id="tab-colors" class="tab-content">
+                <div class="settings-grid">
+                    <div class="card">
+                        <div class="card-title">🔵 CT TEAM</div>
+
+                        <div class="color-row"><span>Box Color</span><input type="color" id="box_color_ct"
+                                value="#ff3300"></div>
+
+                        <div class="color-row"><span>Filled Box Color</span><input type="color" id="fill_box_color_ct"
+                                value="#ff3300"></div>
+                        <div class="color-row"><span>Name Color</span><input type="color" id="name_color_ct"
+                                value="#ff8066"></div>
+
+                        <div class="color-row"><span>Skeleton Color</span><input type="color" id="skeleton_color_ct"
+                                value="#ff3300"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🔴 T TEAM</div>
+                        <div class="color-row"><span>Box Color</span><input type="color" id="box_color_t"
+                                value="#0080ff"></div>
+                        <div class="color-row"><span>Filled Box Color</span><input type="color" id="fill_box_color_t"
+                                value="#0080ff"></div>
+
+                        <div class="color-row"><span>Name Color</span><input type="color" id="name_color_t"
+                                value="#80b3ff"></div>
+                        <div class="color-row"><span>Skeleton Color</span><input type="color" id="skeleton_color_t"
+                                value="#0080ff"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">💚 HEALTH</div>
+                        <div class="color-row"><span>High (>60%)</span><input type="color" id="health_high"
+                                value="#00ff00"></div>
+                        <div class="color-row"><span>Medium (30-60%)</span><input type="color" id="health_medium"
+                                value="#ffff00"></div>
+                        <div class="color-row"><span>Low (30%)</span><input type="color" id="health_low"
+                                value="#ff0000"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-skinchanger" class="tab-content">
+                <div class="card">
+                    <div class="card-title">🎨 SKIN CHANGER</div>
+                    <div class="switch-item">
+                        <div class="switch-label">Enable Skin Changer</div>
+                        <label class="switch">
+                            <input type="checkbox" id="skin_changer_enabled">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="select-item">
+                        <div class="select-label">AK-47 Skin</div>
+                        <select id="ak_skin">
+                            <option value="0">None</option>
+                            <option value="1337">Fire Serpent</option>
+                            <option value="344">Howl</option>
+                            <option value="638">Redline</option>
+                        </select>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-label"><span>Wear (0-1)</span><span id="wear_val">0.01</span></div>
+                        <input type="range" id="wear" min="0" max="1" step="0.01" value="0.01">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB INFO -->
+            <div id="tab-info" class="tab-content">
+                <div class="info-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">❤️ HEALTH</div>
+                        <div class="stat-value" id="stat_health">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">🎯 TEAM</div>
+                        <div class="stat-value" id="stat_team">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">👥 ENEMIES</div>
+                        <div class="stat-value" id="stat_enemies">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">📍 CLOSEST</div>
+                        <div class="stat-value" id="stat_closest">-</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="btn-reset" id="reset_btn">⟳ RESET ALL</button>
+                    <div class="divider"></div>
+                    <div style="font-size: 0.6rem; color: #444; text-align: center;">FREEADOM v1.0 | END/INS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
