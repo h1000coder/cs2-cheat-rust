@@ -114,7 +114,7 @@ impl TriggerBot {
             return;
         }
 
-        // Verifica se a tecla está sendo pressionada
+        
         let key_state = unsafe { GetAsyncKeyState(config.trigger_key as i32) };
         let is_key_pressed = (key_state & 0x8000u16 as i16) != 0;
 
@@ -140,7 +140,7 @@ impl TriggerBot {
 
         println!("🎯 TriggerBot: Entity index = {}", entity_index);
 
-        // Se for -1 ou 0, nenhum jogador na mira
+        
         if entity_index <= 0 {
             println!(
                 "📌 TriggerBot: Nenhum jogador na mira (index={})",
@@ -176,7 +176,7 @@ impl TriggerBot {
             return;
         }
 
-        // 🔥 CORREÇÃO: Lê o team do CONTROLLER, não do pawn
+        
         let entity_team = match game_process.read_i32(controller + Offsets::m_iTeamNum) {
             Some(team) => team,
             None => {
